@@ -28,17 +28,22 @@ def CreateUsers():
 
 def GetUserName():
     ##### write the code to enter the username or End and return username
-    if username == "END":
-        return username
+    username = input("Enter username (Or End): ")
+    return username
 
 def GetUserPassword():
     ##### write the code to enter the pwd and return pwd
-
+    userpwd = input("Enter password: ")
+    return userpwd
 
 def GetUserRole():
      userrole = input("Enter role (Admin or User): ")
      while True:
          ####### write the if statement that validates that Admin or User has been entered. If true, return userrole.  If false, re-input userrole
+         if GetUserRole(userrole):
+             return userrole
+         else:
+             print("Please enter a valid User Role: ")
 
 def printuserinfo():
     UserFile = open("Users.txt","r")
@@ -163,7 +168,7 @@ def PrintTotals(EmpTotals):
 if __name__ == "__main__":
     ##################################################
     ########## Write the line of code to call the method CreateUsers
-    def CreateUsers():
+    CreateUsers()
     print()
     print("##### Data Entry #####")
     ########## Write the line of code to assign UserRole and UserName to the function Login
@@ -171,12 +176,12 @@ if __name__ == "__main__":
     DetailsPrinted = False  ###
     EmpTotals = {} ###
     ########## Write the if statement that will check to see if UserRole is equal to NONE (NOTE: code will show red error lines until this line is written)
-    if UserRole == "NONE"
+    if UserRole == "NONE":
        print(UserName," is invalid.")
     else:
     # only admin users can enter data
         ##### write the if statement that will check to see if the UserRole is equal to ADMIN (NOTE: code will show red error lines until this line is written)
-        if UserRole == "ADMIN"
+        if UserRole == "ADMIN":
             EmpFile = open("Employees.txt", "a+")                
             while True:
                 empname = GetEmpName()
